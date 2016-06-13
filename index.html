@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>THEBIGK1D</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+
+    <link href="https://bootswatch.com/darkly/bootstrap.min.css"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="js/lib/jquery.localScroll/jquery.localScroll.min.js" type="text/javascript"></script>
+    <script src="js/lib/jquery.scrollTo/jquery.scrollTo.min.js" type="text/javascript"></script>
+</head>
+
+<style>
+    .underlay {
+        position: relative;
+        background:#000000;
+    }
+    .overlay {
+        width:10%;
+        height:10vw;
+        left:50%;
+        top:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position:absolute;
+    }
+
+    .bottom-overlay {
+        width:100%;
+        height:15%;
+        top:85%;
+        position:absolute;
+    }
+
+    div.centerboard {
+        width: 50%;
+        height:50%;
+    }
+
+    a {
+        text-align: center;
+        height:100%;
+    }
+
+    h1{
+        text-align: center;
+    }
+    h3 {
+        text-align: center;
+    }
+
+    ul {
+        height:100%;
+    }
+
+    li {
+
+        margin: 0px;
+    }
+
+    div.tiled {
+        background-image: url(wordpress/wp-content/themes/customtheme/img/greyscale.png);
+        background-size: 100%;
+        width: 100%;
+        height: 1000px;
+        position:absolute;
+    }
+
+
+
+    div.side-tiled {
+        background-image: url(wordpress/wp-content/themes/customtheme/img/forest.png);
+        background-repeat: repeat-x;
+    }​
+
+    a {
+        text-decoration-color: #FFFFFF;
+         }
+
+
+</style>
+
+<body>
+<!-- particles.js container -->
+<div style="height: 100vh">
+<div id="particles-js" class="underlay">
+
+
+    <div class="overlay">
+        <!--
+        <div class="centerboard alert-success">  art  </div>
+        <div class="centerboard alert-info">  art  </div>
+        <div class="centerboard alert-warning">  art  </div>
+        <div class="centerboard alert-danger">  art  </div>
+
+        -->
+
+
+            <ul class="nav nav-pills nav-stacked" id="nav">
+                <li class="alert-success"><h3><a href="#artJump">art</a></h3></li>
+                <li class="alert-info"><h3><a href="#writingJump">writing</a></h3></li>
+                <li class="alert-warning"><h3><a href="#codeJump">code</a></h3></li>
+                <li class="alert-danger"><h3><a href="#aboutJump">about</a></h3></li>
+            </ul>
+
+
+
+        </div>
+    </div>
+        <div class="bottom-overlay side-tiled"></div>
+    </div>
+
+    <?php
+    // Get the last 3 posts.
+    global $post;
+    $args = array( 'posts_per_page' => 3 );
+    $myposts = get_posts( $args );
+
+    foreach( $myposts as $post ) :	setup_postdata($post); ?>
+    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a><br />
+    <?php endforeach; ?>
+
+    <div class="tiled">
+
+        <div id="art">
+        <h1 ><a NAME="artJump">Art</a></h1>
+        <h3 class="bg-success">&nbsp</h3>
+        </div>
+
+        <div id="writing">
+            <h1 ><a NAME="writingJump">Writing</a></h1>
+            <h3 class="bg-info">&nbsp</h3>
+        </div>
+
+        <div id="coding">
+            <h1 ><a NAME="codeJump">Coding</a></h1>
+            <h3 class="bg-warning">&nbsp</h3>
+        </div>
+
+        <div id="about">
+            <h1 ><a NAME="aboutJump">About</a></h1>
+            <h3 class="bg-danger">&nbsp</h3>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="wordpress/wp-content/themes/customtheme/js/lib/particles.js-master/particles.js"></script>
+    <script src="js/constellations.js"></script>
+
+    <script>
+                $(document).ready(function() {
+                    $('#nav').localScroll({duration:600});
+                });
+    </script>
+
+    </body>
+
+
+
+    </html>
