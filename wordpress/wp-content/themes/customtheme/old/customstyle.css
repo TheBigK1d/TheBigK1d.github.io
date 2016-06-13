@@ -1,0 +1,71 @@
+.underlay {
+    position: relative;
+    background:#000000;
+    height:100% ;
+    width:100%;
+}
+
+body {
+    height: 100vh;
+    width:100%;
+}
+
+
+.overlay {
+    width:10%;
+    height:10vw;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position:absolute;
+}
+
+.bottom-overlay {
+    width:100%;
+    height:15%;
+    top:85%;
+    position:absolute;
+}
+
+div.centerboard {
+    width: 50%;
+    height:50%;
+}
+
+a {
+    text-align: center;
+    height:100%;
+}
+
+h1{
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+
+ul {
+    height:100%;
+}
+
+li {
+
+    margin: 0px;
+}
+
+div.tiled {
+    background-image: url(new/img/greyscale.png);
+    background-size: 100%;
+    width: 100%;
+    height: 1000px;
+    position:absolute;
+}
+
+
+
+div.side-tiled {
+    background-image: url(new/img/forest.png);
+    background-repeat: repeat-x;
+}​
